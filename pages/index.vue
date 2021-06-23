@@ -6,7 +6,7 @@
         <ul>
           <li v-for="(itemUrl, itemName) in category" :key="itemName + '-' + nanoid(8)">
             <a :href="itemUrl" :class="{ 'transition-colors text-blue-500 hover:text-red-500 inline-block': itemUrl !== null }">
-              <span class="relative inline-block h-4 w-4">
+              <span class="relative inline-block h-4 w-4" v-if="itemUrl !== null">
                 <img :src="getFavicon(itemUrl)" class="relative top-0 left-0 bottom-0 right-0 inline-block" onerror="this.style.display='none'" />
               </span>
               <span :class="{ underline: itemUrl !== null }">{{ itemName }}</span>
