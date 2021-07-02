@@ -25,6 +25,11 @@ export default {
     const data = (await $content().fetch())[0];
     return { ...data };
   },
+  head() {
+    return {
+      title: this.title !== undefined ? this.title : 'Homepage',
+    };
+  },
   methods: {
     nanoid() {
       return nanoid(8);
@@ -37,9 +42,6 @@ export default {
         }
       }
       return null;
-    },
-    log(value) {
-      console.dir(value);
     },
   },
 };
