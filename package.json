@@ -1,11 +1,11 @@
 {
-  "name": "homepage.html",
+  "name": "homepage",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "dev": "nuxt",
-    "setup": "nuxt build; nuxt generate; rsync -r dist/ ~/.homepage.html;"
+    "setup": "nuxt build; nuxt generate; rsync -r dist/ ~/.homepage;"
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",

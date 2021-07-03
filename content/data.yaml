@@ -1,4 +1,4 @@
 categories:
-  homepage.html:
+  homepage:
     Simple browser homepage generator written in Vue:
-    GitHub repo with instructions: https://github.com/brachkow/homepage.html
+    GitHub repo with instructions: https://github.com/brachkow/homepage
