@@ -2,12 +2,12 @@
   <main class="container mx-auto p-4">
     <main class="grid gap-4 grid-cols-2 sm:grid-cols-4 lg:grid-cols-6">
       <article v-for="(category, categoryName) in categories" :key="categoryName + '-' + nanoid(8)">
-        <h2 class="font-bold">{{ categoryName }}</h2>
+        <h2 class="font-bold text-black dark:text-white">{{ categoryName }}</h2>
         <ul>
           <li v-for="(itemUrl, itemName) in category" :key="itemName + '-' + nanoid(8)">
-            <a :href="itemUrl" :class="{ 'transition-colors text-blue-500 hover:text-red-500 inline-block': itemUrl !== null }">
+            <a :href="itemUrl" class="text-black dark:text-white" :class="{ 'transition-colors text-blue-500 dark:text-blue-500 hover:text-red-500 inline-block': itemUrl !== null }">
               <span class="relative inline-block h-4 w-4" v-if="itemUrl !== null">
-                <img :src="getFavicon(itemUrl)" class="relative top-0 left-0 bottom-0 right-0 inline-block" onerror="this.style.display='none'" />
+                <img :src="getFavicon(itemUrl)" class="relative inset-0 inline-block" onerror="this.style.display='none'" />
               </span>
               <span :class="{ underline: itemUrl !== null }">{{ itemName }}</span>
             </a>
@@ -46,3 +46,9 @@ export default {
   },
 };
 </script>
+
+<style>
+body {
+  @apply bg-white dark:bg-black;
+}
+</style>
